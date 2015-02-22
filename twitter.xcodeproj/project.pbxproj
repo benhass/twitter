@@ -108,7 +108,6 @@
 				C93A332C1A97081A0077094D /* Controllers */,
 				C93A33271A96F85B0077094D /* Models */,
 				C93A33021A96B55D0077094D /* AppDelegate.swift */,
-				C93A33041A96B55D0077094D /* ViewController.swift */,
 				C92D8F631A993C7A00F033AB /* TweetCell.swift */,
 				C92D8F641A993C7A00F033AB /* TweetCell.xib */,
 				C93A33061A96B55D0077094D /* Main.storyboard */,
@@ -158,6 +157,7 @@
 		C93A332C1A97081A0077094D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C93A33041A96B55D0077094D /* ViewController.swift */,
 				C93A332D1A9708360077094D /* TweetsViewController.swift */,
 			);
 			name = Controllers;
