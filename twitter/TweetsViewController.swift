@@ -58,7 +58,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func loadTweets() {
-        TwitterClient.sharedInstance.homeTimeLineWithParams(nil, completion:  { (tweets, error) -> () in
+        TwitterClient.sharedInstance.homeTimeLineWithParams(nil, completion: { (tweets, error) -> () in
             self.tweets = tweets
             self.refreshControl.endRefreshing()
             self.tweetsTableView.reloadData()

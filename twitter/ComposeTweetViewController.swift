@@ -19,7 +19,7 @@ class ComposeTweetViewController: UIViewController {
 
         if originalTweetForReply != nil {
             tweetParams["in_reply_to_status_id"] = originalTweetForReply!.id
-            tweetTextView.text = "@\(originalTweetForReply!.user!.screenName!), "
+            tweetTextView.text = "@\(originalTweetForReply!.user!.screenName!) "
         }
         // Do any additional setup after loading the view.
     }

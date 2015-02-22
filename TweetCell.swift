@@ -39,7 +39,7 @@ class TweetCell: UITableViewCell {
             self._tweet = tweet
             profileImageView.setImageWithURL(tweet.user?.profileImageBiggerUrl)
             userNameLabel.text = tweet.user?.name
-            userScreenNameLabel.text = tweet.user?.screenName
+            userScreenNameLabel.text = "@\(tweet.user!.screenName!)"
             tweetLabel.text = tweet.text
             timestampLabel.text = tweet.timestamp
         }

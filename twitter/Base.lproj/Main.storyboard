@@ -50,16 +50,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="j4h-od-RTb">
-                                <rect key="frame" x="0.0" y="51" width="320" height="465"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yk7-hZ-rVC">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yk7-hZ-rVC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xce-Gp-z4h">
-                                        <rect key="frame" x="256" y="13" width="56" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <rect key="frame" x="8" y="13" width="56" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Log Out">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -67,20 +63,36 @@
                                             <action selector="onLogout:" destination="7NT-e2-A4x" eventType="touchUpInside" id="Ae3-oh-UrO"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OZ-TY-nKV">
+                                        <rect key="frame" x="267" y="13" width="45" height="30"/>
+                                        <state key="normal" title="New +">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onPressCompose:" destination="7NT-e2-A4x" eventType="touchUpInside" id="YIm-OW-vy5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MKg-rQ-Czn"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OZ-TY-nKV">
-                                <rect key="frame" x="112" y="530" width="75" height="30"/>
-                                <state key="normal" title="New Tweet">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onPressCompose:" destination="7NT-e2-A4x" eventType="touchUpInside" id="YIm-OW-vy5"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="j4h-od-RTb">
+                                <rect key="frame" x="0.0" y="50" width="320" height="518"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yk7-hZ-rVC" secondAttribute="trailing" id="FZ5-UX-gRr"/>
+                            <constraint firstItem="yk7-hZ-rVC" firstAttribute="top" secondItem="t59-yf-UIM" secondAttribute="top" id="JcE-wV-370"/>
+                            <constraint firstAttribute="trailing" secondItem="j4h-od-RTb" secondAttribute="trailing" id="VhU-r1-Rfn"/>
+                            <constraint firstItem="yk7-hZ-rVC" firstAttribute="leading" secondItem="t59-yf-UIM" secondAttribute="leading" id="Vhl-P1-Vna"/>
+                            <constraint firstItem="UFp-dd-FkQ" firstAttribute="top" secondItem="j4h-od-RTb" secondAttribute="bottom" id="fVF-Of-JC6"/>
+                            <constraint firstItem="j4h-od-RTb" firstAttribute="top" secondItem="yk7-hZ-rVC" secondAttribute="bottom" id="uQh-f1-MeC"/>
+                            <constraint firstItem="j4h-od-RTb" firstAttribute="leading" secondItem="t59-yf-UIM" secondAttribute="leading" id="v8K-oW-Sr3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kMy-7C-8Mm"/>
                     <connections>
@@ -209,25 +221,55 @@
                                 <color key="textColor" red="0.51265977539999996" green="0.65097931409999998" blue="0.79135101009999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ1-nD-aYJ">
-                                <rect key="frame" x="137" y="530" width="39" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ1-nD-aYJ">
+                                <rect key="frame" x="147" y="169" width="35" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Reply">
+                                    <color key="titleColor" red="0.51265977539999996" green="0.65097931409999998" blue="0.79135101009999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onPressReply:" destination="Ipn-DS-agU" eventType="touchUpInside" id="NI6-tY-B8z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adv-b4-p8o">
+                                <rect key="frame" x="16" y="169" width="50" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Retweet">
+                                    <color key="titleColor" red="0.51265977539999996" green="0.65097931409999998" blue="0.79135101009999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPressRetweet:" destination="Ipn-DS-agU" eventType="touchUpInside" id="4ff-cW-hTN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evh-At-pMX">
+                                <rect key="frame" x="82" y="169" width="49" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Favorite">
+                                    <color key="titleColor" red="0.51265977539999996" green="0.65097931409999998" blue="0.79135101009999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPressFavorite:" destination="Ipn-DS-agU" eventType="touchUpInside" id="D0R-U1-ttd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95937894570000004" green="0.95937894570000004" blue="0.95937894570000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="evh-At-pMX" firstAttribute="leading" secondItem="adv-b4-p8o" secondAttribute="trailing" constant="16" id="09k-W4-Fhq"/>
                             <constraint firstItem="vkF-jn-8AH" firstAttribute="top" secondItem="i7b-oS-Bn7" secondAttribute="bottom" constant="8" id="2PU-Gc-rBI"/>
+                            <constraint firstItem="PQ1-nD-aYJ" firstAttribute="leading" secondItem="evh-At-pMX" secondAttribute="trailing" constant="16" id="2fM-Bz-rcT"/>
                             <constraint firstItem="d62-vq-QwH" firstAttribute="centerY" secondItem="gOv-Uj-EdH" secondAttribute="centerY" id="2gx-Vg-1vT"/>
                             <constraint firstItem="X7H-OK-Os0" firstAttribute="leading" secondItem="kNy-nT-LlO" secondAttribute="leadingMargin" id="4xE-xK-7c7"/>
                             <constraint firstItem="X7H-OK-Os0" firstAttribute="top" secondItem="vkF-jn-8AH" secondAttribute="bottom" constant="8" id="7dV-5V-FXq"/>
+                            <constraint firstItem="adv-b4-p8o" firstAttribute="top" secondItem="X7H-OK-Os0" secondAttribute="bottom" constant="8" id="DYO-19-9OG"/>
+                            <constraint firstItem="adv-b4-p8o" firstAttribute="leading" secondItem="kNy-nT-LlO" secondAttribute="leading" constant="16" id="OS5-qy-ap0"/>
                             <constraint firstAttribute="trailing" secondItem="vkF-jn-8AH" secondAttribute="trailing" constant="16" id="Tuh-Rk-UoK"/>
                             <constraint firstItem="d62-vq-QwH" firstAttribute="leading" secondItem="gOv-Uj-EdH" secondAttribute="trailing" constant="8" id="VRC-4z-h7b"/>
                             <constraint firstItem="ZEk-Cn-hEZ" firstAttribute="top" secondItem="kNy-nT-LlO" secondAttribute="top" id="csc-zD-ssS"/>
+                            <constraint firstItem="evh-At-pMX" firstAttribute="top" secondItem="X7H-OK-Os0" secondAttribute="bottom" constant="8" id="hh0-Aw-tDS"/>
+                            <constraint firstItem="PQ1-nD-aYJ" firstAttribute="top" secondItem="X7H-OK-Os0" secondAttribute="bottom" constant="8" id="nwq-pU-JPR"/>
                             <constraint firstItem="ZEk-Cn-hEZ" firstAttribute="leading" secondItem="kNy-nT-LlO" secondAttribute="leading" id="qS6-zW-86i"/>
                             <constraint firstAttribute="trailing" secondItem="ZEk-Cn-hEZ" secondAttribute="trailing" id="r6o-SR-n1M"/>
                             <constraint firstAttribute="trailingMargin" secondItem="X7H-OK-Os0" secondAttribute="trailing" id="rPo-Fl-dPt"/>

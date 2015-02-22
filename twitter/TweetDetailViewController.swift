@@ -22,7 +22,7 @@ class TweetDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         profileImageView.setImageWithURL(tweet.user?.profileImageBiggerUrl)
         userNameLabel.text = tweet.user?.name
-        userScreenNameLabel.text = tweet.user?.screenName
+        userScreenNameLabel.text = "@\(tweet.user!.screenName!)"
         tweetLabel.text = tweet.text
         timestampLabel.text = tweet.timestamp
     }
@@ -36,6 +36,20 @@ class TweetDetailViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func onPressRetweet(sender: AnyObject) {
+        var params = ["id": tweet.id!]
+        TwitterClient.sharedInstance.createRetweet(params, completion: { (tweet, error) -> () in
+            println("retweeted")
+        })
+    }
+    
+    @IBAction func onPressFavorite(sender: AnyObject) {
+        var params = ["id": tweet.id!]
+        TwitterClient.sharedInstance.createFavorite(params, completion: { (tweet, error) -> () in
+            println("favorited")
+        })
+    }
+    
     @IBAction func onPressReply(sender: AnyObject) {
         performSegueWithIdentifier("composeTweetSegue", sender: self)
     }
