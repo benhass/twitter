@@ -15,32 +15,32 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1m-Kh-7WU">
-                        <rect key="frame" x="62" y="18" width="75" height="21"/>
+                        <rect key="frame" x="62" y="18" width="75" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ERL-4v-51z">
-                        <rect key="frame" x="8" y="8" width="45" height="42"/>
+                        <rect key="frame" x="8" y="8" width="45" height="45"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="42" id="kDd-hH-yH1"/>
+                            <constraint firstAttribute="height" constant="45" id="kDd-hH-yH1"/>
                             <constraint firstAttribute="width" constant="45" id="wsK-VS-rxv"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="blah blah blah" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sel-qc-XKD">
-                        <rect key="frame" x="8" y="58" width="304" height="29"/>
+                        <rect key="frame" x="8" y="61" width="304" height="27"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:23 a.m. March 5, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yO6-oK-NZ1">
-                        <rect key="frame" x="8" y="95" width="304" height="15"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <rect key="frame" x="8" y="96" width="304" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.64628708964646464" green="0.64628708964646464" blue="0.64628708964646464" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="@somename" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DL-e9-rpu">
-                        <rect key="frame" x="145" y="21" width="77" height="16"/>
+                        <rect key="frame" x="145" y="22" width="77" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.51265977543354868" green="0.65097931409451926" blue="0.79135101010101017" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -81,7 +81,8 @@
                 <outlet property="profileImageView" destination="ERL-4v-51z" id="F2A-Pn-Wvz"/>
                 <outlet property="timestampLabel" destination="yO6-oK-NZ1" id="u2h-ea-WZp"/>
                 <outlet property="tweetLabel" destination="Sel-qc-XKD" id="RIH-24-aP7"/>
-                <outlet property="usernameLabel" destination="K1m-Kh-7WU" id="eis-LF-dcU"/>
+                <outlet property="userNameLabel" destination="K1m-Kh-7WU" id="eeU-ir-1O5"/>
+                <outlet property="userScreenNameLabel" destination="8DL-e9-rpu" id="o8K-EJ-gZV"/>
             </connections>
             <point key="canvasLocation" x="139" y="304.5"/>
         </tableViewCell>

@@ -10,7 +10,8 @@ import UIKit
 
 class TweetCell: UITableViewCell {
 
-    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userScreenNameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
@@ -37,7 +38,8 @@ class TweetCell: UITableViewCell {
         set(tweet) {
             self._tweet = tweet
             profileImageView.setImageWithURL(tweet.user?.profileImageBiggerUrl)
-            usernameLabel.text = tweet.user?.screenName
+            userNameLabel.text = tweet.user?.name
+            userScreenNameLabel.text = tweet.user?.screenName
             tweetLabel.text = tweet.text
             timestampLabel.text = tweet.timestamp
         }

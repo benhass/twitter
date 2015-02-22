@@ -38,7 +38,18 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.tweet = tweets[indexPath.row]
         return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var cell = tableView.cellForRowAtIndexPath(indexPath)
+        performSegueWithIdentifier("tweetDetailSegue", sender: cell)
+    }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var vc = segue.destinationViewController as TweetDetailViewController
+        let indexPath = self.tweetsTableView.indexPathForCell(sender as TweetCell) as NSIndexPath!
+        vc.tweet = tweets[indexPath.row]
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
