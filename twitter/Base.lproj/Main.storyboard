@@ -114,7 +114,7 @@
                                     <action selector="onSubmit:" destination="jfu-6w-mtU" eventType="touchUpInside" id="EFz-eJ-ojr"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="blah blah blah..." translatesAutoresizingMaskIntoConstraints="NO" id="x4g-sF-pmA">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4g-sF-pmA">
                                 <rect key="frame" x="16" y="39" width="288" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

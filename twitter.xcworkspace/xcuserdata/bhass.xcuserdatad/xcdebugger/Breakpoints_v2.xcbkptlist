@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twitter/Tweet.swift"
-            timestampString = "446253737.297926"
+            timestampString = "446279203.441892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "init(dictionary:)"
             landmarkType = "5">
          </BreakpointContent>

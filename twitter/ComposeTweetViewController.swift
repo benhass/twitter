@@ -9,12 +9,18 @@
 import UIKit
 
 class ComposeTweetViewController: UIViewController {
-
+    
     @IBOutlet weak var tweetTextView: UITextView!
-
+    var originalTweetForReply: Tweet?
+    var tweetParams: NSMutableDictionary = ["status": ""]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if originalTweetForReply != nil {
+            tweetParams["in_reply_to_status_id"] = originalTweetForReply!.id
+            tweetTextView.text = "@\(originalTweetForReply!.user!.screenName!), "
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -28,22 +34,20 @@ class ComposeTweetViewController: UIViewController {
     }
     
     @IBAction func onSubmit(sender: AnyObject) {
-        println(tweetTextView.text)
-        self.dismissViewControllerAnimated(true, completion: nil)
+        tweetParams["status"] = tweetTextView.text
+        TwitterClient.sharedInstance.createTweet(tweetParams, completion:  { (tweet, error) -> () in
+            if error == nil {
+                println(tweet!.text)
+                self.tweetTextView.text = ""
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                println("error creating tweet")
+            }
+        })
     }
     
     @IBAction func onCancel(sender: AnyObject) {
+        tweetTextView.text = ""
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

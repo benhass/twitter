@@ -39,4 +39,11 @@ class TweetDetailViewController: UIViewController {
     @IBAction func onPressReply(sender: AnyObject) {
         performSegueWithIdentifier("composeTweetSegue", sender: self)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "composeTweetSegue" {
+            var vc = segue.destinationViewController as ComposeTweetViewController
+            vc.originalTweetForReply = tweet
+        }
+    }
 }
