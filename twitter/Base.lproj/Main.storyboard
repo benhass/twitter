@@ -70,6 +70,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OZ-TY-nKV">
+                                <rect key="frame" x="112" y="530" width="75" height="30"/>
+                                <state key="normal" title="New Tweet">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPressCompose:" destination="7NT-e2-A4x" eventType="touchUpInside" id="YIm-OW-vy5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -77,11 +86,68 @@
                     <connections>
                         <outlet property="tweetsTableView" destination="j4h-od-RTb" id="bLW-DW-C7c"/>
                         <segue destination="Ipn-DS-agU" kind="modal" identifier="tweetDetailSegue" modalTransitionStyle="crossDissolve" id="g72-Xm-mIq"/>
+                        <segue destination="jfu-6w-mtU" kind="modal" identifier="composeTweetSegue" modalTransitionStyle="crossDissolve" id="AEd-7y-ywx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gnq-fT-16j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="659" y="239"/>
+        </scene>
+        <!--Compose Tweet View Controller-->
+        <scene sceneID="eey-B8-Lmb">
+            <objects>
+                <viewController id="jfu-6w-mtU" customClass="ComposeTweetViewController" customModule="twitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lx1-Yn-0MM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vjp-R0-YHi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VWM-D3-E7L">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgr-Mx-l3a">
+                                <rect key="frame" x="136" y="182" width="49" height="30"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSubmit:" destination="jfu-6w-mtU" eventType="touchUpInside" id="EFz-eJ-ojr"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="blah blah blah..." translatesAutoresizingMaskIntoConstraints="NO" id="x4g-sF-pmA">
+                                <rect key="frame" x="16" y="39" width="288" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJT-mp-fBz">
+                                <rect key="frame" x="137" y="220" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCancel:" destination="jfu-6w-mtU" eventType="touchUpInside" id="Gyg-SE-915"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95937894570000004" green="0.95937894570000004" blue="0.95937894570000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aOI-FN-oQo" appends="YES" id="JMJ-PN-IUM"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="tweetTextView" destination="x4g-sF-pmA" id="0fV-sq-DhG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mcf-p9-Gaz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aOI-FN-oQo">
+                    <connections>
+                        <action selector="onTap:" destination="jfu-6w-mtU" id="G5s-wJ-Nwx"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1081" y="954"/>
         </scene>
         <!--Tweet Detail View Controller-->
         <scene sceneID="x8z-lC-Y9f">
@@ -143,6 +209,15 @@
                                 <color key="textColor" red="0.51265977539999996" green="0.65097931409999998" blue="0.79135101009999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ1-nD-aYJ">
+                                <rect key="frame" x="137" y="530" width="39" height="30"/>
+                                <state key="normal" title="Reply">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPressReply:" destination="Ipn-DS-agU" eventType="touchUpInside" id="NI6-tY-B8z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95937894570000004" green="0.95937894570000004" blue="0.95937894570000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -170,11 +245,12 @@
                         <outlet property="tweetLabel" destination="vkF-jn-8AH" id="bk8-3C-o3E"/>
                         <outlet property="userNameLabel" destination="gOv-Uj-EdH" id="wIe-LK-xGl"/>
                         <outlet property="userScreenNameLabel" destination="d62-vq-QwH" id="CkK-UN-f2w"/>
+                        <segue destination="jfu-6w-mtU" kind="modal" identifier="composeTweetSegue" modalTransitionStyle="crossDissolve" id="UAO-Nj-0L4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9GM-Vz-8Fb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1095" y="239"/>
+            <point key="canvasLocation" x="1081" y="239"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -182,4 +258,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="UAO-Nj-0L4"/>
+    </inferredMetricsTieBreakers>
 </document>

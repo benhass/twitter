@@ -35,5 +35,8 @@ class TweetDetailViewController: UIViewController {
     @IBAction func onPressHome(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
+
+    @IBAction func onPressReply(sender: AnyObject) {
+        performSegueWithIdentifier("composeTweetSegue", sender: self)
+    }
 }
