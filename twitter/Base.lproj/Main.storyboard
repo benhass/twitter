@@ -33,6 +33,9 @@
                             <constraint firstAttribute="centerY" secondItem="7vQ-Mo-gmi" secondAttribute="centerY" id="U8m-TM-Y7P"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="7NT-e2-A4x" kind="modal" identifier="loginSegue" modalTransitionStyle="crossDissolve" id="UM7-nO-hyU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
