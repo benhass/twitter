@@ -27,4 +27,4 @@ Time spent: 10
 
 ### Walkthrough
 
-![Video Walkthrough](...)
+![Video Walkthrough](https://raw.githubusercontent.com/benhass/twitter/master/twitter-demo.gif)
