@@ -27,6 +27,7 @@ class UserProfileViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         userNameLabel.text = user.name
         userScreenNameLabel.text = "@\(user.screenName!)"
+        profileImageView.setImageWithURL(user.profileImageBiggerUrl)
         profileBackgroundImageView.setImageWithURL(user.profileBackgroundImageUrl)
     }
 

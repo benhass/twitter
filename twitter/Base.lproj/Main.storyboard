@@ -232,7 +232,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2159" y="605"/>
+            <point key="canvasLocation" x="2159" y="609"/>
         </scene>
         <!--User Profile View Controller-->
         <scene sceneID="vgv-bj-H5k">
@@ -242,32 +242,62 @@
                         <viewControllerLayoutGuide type="top" id="aKU-ud-hdX"/>
                         <viewControllerLayoutGuide type="bottom" id="i9A-vo-oTs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SV9-da-Zy7">
+                    <view key="view" contentMode="scaleAspectFill" id="SV9-da-Zy7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XQc-wE-Thb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="214"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ben Hass" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmJ-p4-e0a">
-                                <rect key="frame" x="122" y="112" width="76" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K8Q-Aw-ljC">
-                                <rect key="frame" x="130" y="44" width="60" height="60"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@bhass_test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S5-RE-ZGb">
-                                <rect key="frame" x="119" y="141" width="82" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5G-Cw-SKm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XQc-wE-Thb">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ben Hass" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmJ-p4-e0a">
+                                        <rect key="frame" x="119" y="168" width="76" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K8Q-Aw-ljC">
+                                        <rect key="frame" x="127" y="100" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Ada-WK-Yet"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Jlb-0B-cub"/>
+                                            <constraint firstAttribute="width" constant="60" id="Rtn-5s-I1t"/>
+                                            <constraint firstAttribute="height" constant="60" id="ggb-zY-jsi"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@bhass_test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S5-RE-ZGb">
+                                        <rect key="frame" x="116" y="197" width="82" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="XQc-wE-Thb" firstAttribute="top" secondItem="M5G-Cw-SKm" secondAttribute="top" id="48e-9I-XTz"/>
+                                    <constraint firstItem="1S5-RE-ZGb" firstAttribute="top" secondItem="nmJ-p4-e0a" secondAttribute="bottom" constant="8" id="7PX-Yc-m9O"/>
+                                    <constraint firstAttribute="bottom" secondItem="XQc-wE-Thb" secondAttribute="bottom" id="Esm-i5-BCk"/>
+                                    <constraint firstItem="K8Q-Aw-ljC" firstAttribute="centerX" secondItem="1S5-RE-ZGb" secondAttribute="centerX" id="GoC-7U-12B"/>
+                                    <constraint firstItem="nmJ-p4-e0a" firstAttribute="top" secondItem="K8Q-Aw-ljC" secondAttribute="bottom" constant="8" id="NGP-BQ-aiB"/>
+                                    <constraint firstItem="1S5-RE-ZGb" firstAttribute="centerX" secondItem="nmJ-p4-e0a" secondAttribute="centerX" id="P0l-WT-obL"/>
+                                    <constraint firstItem="K8Q-Aw-ljC" firstAttribute="top" secondItem="M5G-Cw-SKm" secondAttribute="top" constant="100" id="UoM-Pp-e9W"/>
+                                    <constraint firstAttribute="trailing" secondItem="XQc-wE-Thb" secondAttribute="trailing" id="bdv-TM-pvC"/>
+                                    <constraint firstItem="XQc-wE-Thb" firstAttribute="leading" secondItem="M5G-Cw-SKm" secondAttribute="leading" id="bvq-LF-qqt"/>
+                                    <constraint firstItem="K8Q-Aw-ljC" firstAttribute="leading" secondItem="M5G-Cw-SKm" secondAttribute="leading" constant="127" id="nR7-5S-ee1"/>
+                                    <constraint firstItem="1S5-RE-ZGb" firstAttribute="centerX" secondItem="K8Q-Aw-ljC" secondAttribute="centerX" id="riW-Sy-esL"/>
+                                    <constraint firstAttribute="height" constant="250" id="zTD-Zw-G7c"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95937894570000004" green="0.95937894570000004" blue="0.95937894570000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="M5G-Cw-SKm" firstAttribute="leading" secondItem="SV9-da-Zy7" secondAttribute="leading" id="FYd-2Q-f44"/>
+                            <constraint firstItem="M5G-Cw-SKm" firstAttribute="top" secondItem="SV9-da-Zy7" secondAttribute="top" id="P9p-lX-5HO"/>
+                            <constraint firstAttribute="trailing" secondItem="M5G-Cw-SKm" secondAttribute="trailing" id="SxQ-xe-P7X"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Y7w-Pg-kgU"/>
+                    <navigationItem key="navigationItem" id="LP0-z6-grv"/>
                     <connections>
                         <outlet property="profileBackgroundImageView" destination="XQc-wE-Thb" id="ZrE-2a-dEX"/>
                         <outlet property="profileImageView" destination="K8Q-Aw-ljC" id="eiv-wb-VMj"/>
@@ -277,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iqd-aw-djU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1723" y="-439"/>
+            <point key="canvasLocation" x="2703" y="239"/>
         </scene>
         <!--Tweet Detail View Controller-->
         <scene sceneID="x8z-lC-Y9f">
@@ -429,7 +459,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hi4-Wg-47w"/>
-        <segue reference="hWB-tV-av2"/>
+        <segue reference="ye2-21-Iq5"/>
+        <segue reference="P3C-Gw-5vR"/>
     </inferredMetricsTieBreakers>
 </document>
