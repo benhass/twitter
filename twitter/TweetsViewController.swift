@@ -16,11 +16,12 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+
         tweetsTableView.delegate = self
         tweetsTableView.dataSource = self
         tweetsTableView.rowHeight = UITableViewAutomaticDimension
-        tweetsTableView.estimatedRowHeight = 100
-        tweetsTableView.registerNib(UINib(nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "TweetCell")
+        tweetsTableView.estimatedRowHeight = 250
         
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "loadTweets", forControlEvents: UIControlEvents.ValueChanged)
@@ -37,11 +38,6 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var cell = tweetsTableView.dequeueReusableCellWithIdentifier("TweetCell") as TweetCell
         cell.tweet = tweets[indexPath.row]
         return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var cell = tableView.cellForRowAtIndexPath(indexPath)
-        performSegueWithIdentifier("tweetDetailSegue", sender: cell)
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -67,9 +63,5 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func onLogout(sender: AnyObject) {
         User.currentUser?.logout()
-    }
-    
-    @IBAction func onPressCompose(sender: AnyObject) {
-        performSegueWithIdentifier("composeTweetSegue", sender: nil)
     }
 }

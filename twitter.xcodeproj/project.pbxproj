@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C92D8F651A993C7A00F033AB /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92D8F631A993C7A00F033AB /* TweetCell.swift */; };
-		C92D8F661A993C7A00F033AB /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92D8F641A993C7A00F033AB /* TweetCell.xib */; };
 		C93676A11A996618005D1337 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93676A01A996618005D1337 /* TweetDetailViewController.swift */; };
 		C93A33031A96B55D0077094D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93A33021A96B55D0077094D /* AppDelegate.swift */; };
 		C93A33051A96B55D0077094D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93A33041A96B55D0077094D /* ViewController.swift */; };
@@ -37,7 +36,6 @@
 /* Begin PBXFileReference section */
 		2744549A9BD9A21C095F4D33 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C92D8F631A993C7A00F033AB /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetCell.swift; path = ../TweetCell.swift; sourceTree = "<group>"; };
-		C92D8F641A993C7A00F033AB /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TweetCell.xib; path = ../TweetCell.xib; sourceTree = "<group>"; };
 		C93676A01A996618005D1337 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		C93A32FD1A96B55D0077094D /* twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93A33011A96B55D0077094D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				C93A33271A96F85B0077094D /* Models */,
 				C93A33021A96B55D0077094D /* AppDelegate.swift */,
 				C92D8F631A993C7A00F033AB /* TweetCell.swift */,
-				C92D8F641A993C7A00F033AB /* TweetCell.xib */,
 				C93A33061A96B55D0077094D /* Main.storyboard */,
 				C93A33091A96B55D0077094D /* Images.xcassets */,
 				C93A330B1A96B55D0077094D /* LaunchScreen.xib */,
@@ -263,7 +260,6 @@
 				C93A33081A96B55D0077094D /* Main.storyboard in Resources */,
 				C93A330D1A96B55D0077094D /* LaunchScreen.xib in Resources */,
 				C93A330A1A96B55D0077094D /* Images.xcassets in Resources */,
-				C92D8F661A993C7A00F033AB /* TweetCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

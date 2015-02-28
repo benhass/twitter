@@ -31,10 +31,6 @@ class TweetDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func onPressHome(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
 
     @IBAction func onPressRetweet(sender: AnyObject) {
         var params = ["id": tweet.id!]
@@ -50,12 +46,8 @@ class TweetDetailViewController: UIViewController {
         })
     }
     
-    @IBAction func onPressReply(sender: AnyObject) {
-        performSegueWithIdentifier("composeTweetSegue", sender: self)
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "composeTweetSegue" {
+        if segue.identifier == "composeRetweetSegue" {
             var vc = segue.destinationViewController as ComposeTweetViewController
             vc.originalTweetForReply = tweet
         }

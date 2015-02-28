@@ -39,7 +39,7 @@ class ComposeTweetViewController: UIViewController {
             if error == nil {
                 println(tweet!.text)
                 self.tweetTextView.text = ""
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.navigationController?.popViewControllerAnimated(true)
             } else {
                 println("error creating tweet")
             }
@@ -48,6 +48,6 @@ class ComposeTweetViewController: UIViewController {
     
     @IBAction func onCancel(sender: AnyObject) {
         tweetTextView.text = ""
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }
