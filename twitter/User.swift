@@ -21,6 +21,8 @@ class User: NSObject {
     var profileImageUrl: NSURL?
     var profileImageBiggerUrlString: String?
     var profileImageBiggerUrl: NSURL?
+    var profileBackgroundImageUrlString: String?
+    var profileBackgroundImageUrl: NSURL?
     var tagline: String?
     
     init(dictionary: NSDictionary) {
@@ -32,7 +34,9 @@ class User: NSObject {
         profileImageUrl = NSURL(string: profileImageUrlString!)
         profileImageBiggerUrlString = profileImageUrlString!.stringByReplacingOccurrencesOfString("_normal.png", withString: "_bigger.png")
         profileImageBiggerUrl = NSURL(string: profileImageBiggerUrlString!)
-        
+        profileBackgroundImageUrlString = dictionary["profile_background_image_url"] as? String
+        profileBackgroundImageUrl = NSURL(string: profileBackgroundImageUrlString!)
+
         tagline = dictionary["description"] as? String
     }
     

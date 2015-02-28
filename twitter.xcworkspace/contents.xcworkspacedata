@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:UserProfileViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:twitter.xcodeproj">
    </FileRef>
    <FileRef

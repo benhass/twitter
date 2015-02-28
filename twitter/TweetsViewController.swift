@@ -22,12 +22,18 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tweetsTableView.dataSource = self
         tweetsTableView.rowHeight = UITableViewAutomaticDimension
         tweetsTableView.estimatedRowHeight = 250
-        
+
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "loadTweets", forControlEvents: UIControlEvents.ValueChanged)
         tweetsTableView.insertSubview(refreshControl, atIndex: 0)
-        
         loadTweets()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        var indexPath = tweetsTableView.indexPathForSelectedRow()
+        if indexPath != nil {
+            tweetsTableView.deselectRowAtIndexPath(indexPath!, animated: false)
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,6 +51,12 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             var vc = segue.destinationViewController as TweetDetailViewController
             let indexPath = self.tweetsTableView.indexPathForCell(sender as TweetCell) as NSIndexPath!
             vc.tweet = tweets[indexPath.row]
+        } else if segue.identifier == "userProfileSegue" {
+            var vc = segue.destinationViewController as UserProfileViewController
+            var tapRecognizer = sender as UIGestureRecognizer
+            var point = tapRecognizer.locationInView(tweetsTableView)
+            var indexPath = tweetsTableView.indexPathForRowAtPoint(point)!
+            vc.user = tweets[indexPath.row].user!
         }
     }
     

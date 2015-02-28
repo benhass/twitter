@@ -20,9 +20,10 @@ class TweetCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+
         profileImageView.layer.masksToBounds = true
         profileImageView.layer.cornerRadius = 5
+        profileImageView.userInteractionEnabled = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -37,7 +38,7 @@ class TweetCell: UITableViewCell {
         }
         set(tweet) {
             self._tweet = tweet
-            profileImageView.setImageWithURL(tweet.user?.profileImageBiggerUrl)
+            profileImageView.setImageWithURL(tweet.user!.profileImageBiggerUrl)
             userNameLabel.text = tweet.user?.name
             userScreenNameLabel.text = "@\(tweet.user!.screenName!)"
             tweetLabel.text = tweet.text

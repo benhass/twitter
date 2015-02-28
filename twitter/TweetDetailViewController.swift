@@ -19,12 +19,16 @@ class TweetDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        profileImageView.layer.masksToBounds = true
+        profileImageView.layer.cornerRadius = 5
+        profileImageView.userInteractionEnabled = true
+        
         // Do any additional setup after loading the view.
-        profileImageView.setImageWithURL(tweet.user?.profileImageBiggerUrl)
         userNameLabel.text = tweet.user?.name
         userScreenNameLabel.text = "@\(tweet.user!.screenName!)"
         tweetLabel.text = tweet.text
         timestampLabel.text = tweet.timestamp
+        profileImageView.setImageWithURL(tweet.user!.profileImageBiggerUrl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +54,9 @@ class TweetDetailViewController: UIViewController {
         if segue.identifier == "composeRetweetSegue" {
             var vc = segue.destinationViewController as ComposeTweetViewController
             vc.originalTweetForReply = tweet
+        } else if segue.identifier == "userProfileSegue" {
+            var vc = segue.destinationViewController as UserProfileViewController
+            vc.user = tweet.user!
         }
     }
 }
