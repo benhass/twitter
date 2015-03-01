@@ -18,17 +18,25 @@ class MenuViewController: UIViewController {
     var containerLastX: CGFloat!
     
     var velocity: CGFloat!
-    private var homeVC: UIViewController!
-    
+    private var homeNavVC: UINavigationController!
+    private var mentionsNavVC: UINavigationController!
+    private var profileVC: UserProfileViewController!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        homeNavVC = self.storyboard!.instantiateViewControllerWithIdentifier("TweetsNavController") as UINavigationController
+        (homeNavVC.topViewController as TweetsViewController).timeline = "home"
+        mentionsNavVC = self.storyboard!.instantiateViewControllerWithIdentifier("TweetsNavController") as UINavigationController
+        (mentionsNavVC.topViewController as TweetsViewController).timeline = "mentions"
 
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        homeVC = storyboard.instantiateViewControllerWithIdentifier("TweetsNavController") as UIViewController
+        profileVC = self.storyboard!.instantiateViewControllerWithIdentifier("UserProfileViewController") as UserProfileViewController
+        profileVC.user = User.currentUser!
         
         containerShowX = (containerView.frame.width / 2)
         containerHiddenX = containerShowX + (containerView.frame.width * (3/4))
         containerMiddleX = containerHiddenX - containerShowX
+        showDefaultVC()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,19 +45,26 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func onTapHome(sender: UIButton) {
+        hideMenu()
         showDefaultVC()
     }
     
     @IBAction func onTapMentions(sender: UIButton) {
-        
+        hideMenu()
+        mentionsNavVC.view.frame = self.containerView.bounds
+        self.containerView.addSubview(mentionsNavVC.view)
+        self.view.bringSubviewToFront(self.containerView)
     }
     
     @IBAction func onTapProfile(sender: UIButton) {
-        //profileVC.view.frame = self.containerView.bounds
-        //self.containerView.addSubview(profileVC.view)
+        hideMenu()
+        profileVC.view.frame = self.containerView.bounds
+        self.containerView.addSubview(profileVC.view)
+        self.view.bringSubviewToFront(self.containerView)
     }
     
     @IBAction func onTapSignOut(sender: UIButton) {
+        hideMenu()
         User.currentUser?.logout()
     }
     
@@ -75,8 +90,8 @@ class MenuViewController: UIViewController {
     }
     
     func showDefaultVC() {
-        homeVC.view.frame = self.containerView.bounds
-        self.containerView.addSubview(homeVC.view)
+        homeNavVC.view.frame = self.containerView.bounds
+        self.containerView.addSubview(homeNavVC.view)
         self.view.bringSubviewToFront(self.containerView)
     }
     

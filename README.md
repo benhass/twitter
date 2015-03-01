@@ -2,7 +2,7 @@
 
 This is a basic twitter app to read and compose tweets using the [Twitter API](https://apps.twitter.com/).
 
-Time spent: 18 hours
+Time spent: 19 hours
 
 ### Features
 
@@ -17,8 +17,8 @@ Time spent: 18 hours
 ##### Hamburger menu
 
 - [X] Dragging anywhere in the view should reveal the menu.
-- [ ] The menu should include links to your profile, the home timeline, and the mentions view.
-- [ ] The menu can look similar to the LinkedIn menu below or feel free to take liberty with the UI.
+- [X] The menu should include links to your profile, the home timeline, and the mentions view.
+- [X] The menu can look similar to the LinkedIn menu below or feel free to take liberty with the UI.
 
 ##### Profile page
 

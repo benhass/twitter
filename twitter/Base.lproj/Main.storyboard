@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="twitter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="vXZ-lx-hvc" customClass="LoginViewController" customModule="twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -24,7 +24,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ROW-BW-SPf"/>
-                                    <segue destination="Fxx-Dh-ah0" kind="modal" identifier="loginSegue" id="N69-1t-QhO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -34,6 +33,9 @@
                             <constraint firstAttribute="centerY" secondItem="7vQ-Mo-gmi" secondAttribute="centerY" id="U8m-TM-Y7P"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="Fxx-Dh-ah0" kind="modal" identifier="loginSegue" modalTransitionStyle="crossDissolve" id="dXW-7P-iiA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,7 +44,7 @@
         <!--Menu View Controller-->
         <scene sceneID="Vjq-rc-dtg">
             <objects>
-                <viewController id="Fxx-Dh-ah0" customClass="MenuViewController" customModule="twitter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="Fxx-Dh-ah0" customClass="MenuViewController" customModule="twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ehy-be-uJI"/>
                         <viewControllerLayoutGuide type="bottom" id="REv-HM-PvL"/>
@@ -65,49 +67,75 @@
                                         <rect key="frame" x="0.0" y="0.0" width="270" height="65"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MST-rc-gb4">
-                                                <rect key="frame" x="16" y="41" width="45" height="21"/>
+                                                <rect key="frame" x="16" y="22" width="238" height="43"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.96123494259999998" green="0.97926808099999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.35677703589999998" green="0.60841285690000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="MST-rc-gb4" firstAttribute="top" secondItem="5UO-f0-1OC" secondAttribute="top" constant="41" id="3Tg-fF-PWa"/>
-                                            <constraint firstAttribute="bottom" secondItem="MST-rc-gb4" secondAttribute="bottom" constant="3" id="gMR-fX-fd0"/>
-                                            <constraint firstItem="MST-rc-gb4" firstAttribute="leading" secondItem="5UO-f0-1OC" secondAttribute="leading" constant="16" id="q5i-Zy-801"/>
+                                            <constraint firstAttribute="trailing" secondItem="MST-rc-gb4" secondAttribute="trailing" constant="16" id="HmZ-cb-WOd"/>
+                                            <constraint firstAttribute="height" constant="65" id="KAL-fU-Gco"/>
+                                            <constraint firstItem="MST-rc-gb4" firstAttribute="leading" secondItem="5UO-f0-1OC" secondAttribute="leading" constant="16" id="Odc-80-Sgb"/>
+                                            <constraint firstItem="MST-rc-gb4" firstAttribute="top" secondItem="5UO-f0-1OC" secondAttribute="top" constant="22" id="g8V-Kj-QTp"/>
+                                            <constraint firstAttribute="bottom" secondItem="MST-rc-gb4" secondAttribute="bottom" id="seC-Xo-S32"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0T-BC-9K2">
-                                        <rect key="frame" x="14" y="73" width="103" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0T-BC-9K2">
+                                        <rect key="frame" x="0.0" y="65" width="270" height="50"/>
+                                        <color key="backgroundColor" red="0.45882352939999999" green="0.52941176469999995" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="XDB-HZ-5hf"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Home Timeline">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="onTapHome:" destination="Fxx-Dh-ah0" eventType="touchUpInside" id="snf-xZ-reP"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g04-1b-aaK">
-                                        <rect key="frame" x="14" y="111" width="64" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g04-1b-aaK">
+                                        <rect key="frame" x="0.0" y="116" width="270" height="50"/>
+                                        <color key="backgroundColor" red="0.45882352939999999" green="0.52941176469999995" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="SDD-og-L8H"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Mentions">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="onTapMentions:" destination="Fxx-Dh-ah0" eventType="touchUpInside" id="nnh-Pr-5ea"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXd-Gz-KKv">
-                                        <rect key="frame" x="14" y="149" width="44" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXd-Gz-KKv">
+                                        <rect key="frame" x="0.0" y="167" width="270" height="50"/>
+                                        <color key="backgroundColor" red="0.45882352939999999" green="0.52941176469999995" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Xkb-Wu-qzx"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Profile">
+                                            <color key="titleColor" red="0.96929827514399636" green="0.99056692122506895" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="onTapProfile:" destination="Fxx-Dh-ah0" eventType="touchUpInside" id="8SH-xn-zJT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wge-Ab-U79">
-                                        <rect key="frame" x="14" y="187" width="60" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wge-Ab-U79">
+                                        <rect key="frame" x="0.0" y="218" width="270" height="50"/>
+                                        <color key="backgroundColor" red="0.45882352939999999" green="0.52941176469999995" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Hh6-al-xPt"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Sign Out">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -115,11 +143,23 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.32549019610000002" green="0.3803921569" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="K0T-BC-9K2" firstAttribute="leading" secondItem="FhF-y8-6gC" secondAttribute="leading" id="3lt-Em-U7M"/>
+                                    <constraint firstItem="yXd-Gz-KKv" firstAttribute="top" secondItem="g04-1b-aaK" secondAttribute="bottom" constant="1" id="F3z-aQ-tSP"/>
                                     <constraint firstItem="5UO-f0-1OC" firstAttribute="leading" secondItem="FhF-y8-6gC" secondAttribute="leading" id="O4h-Y2-sWb"/>
+                                    <constraint firstAttribute="trailing" secondItem="K0T-BC-9K2" secondAttribute="trailing" id="PdB-8q-Y1d"/>
                                     <constraint firstAttribute="trailing" secondItem="5UO-f0-1OC" secondAttribute="trailing" id="QIU-Je-nMp"/>
                                     <constraint firstItem="5UO-f0-1OC" firstAttribute="top" secondItem="FhF-y8-6gC" secondAttribute="top" id="Wuf-Or-Mio"/>
+                                    <constraint firstItem="g04-1b-aaK" firstAttribute="top" secondItem="K0T-BC-9K2" secondAttribute="bottom" constant="1" id="aUj-mI-9SQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="g04-1b-aaK" secondAttribute="trailing" id="cMk-nN-lmp"/>
+                                    <constraint firstItem="Wge-Ab-U79" firstAttribute="leading" secondItem="FhF-y8-6gC" secondAttribute="leading" id="etJ-pc-AuL"/>
+                                    <constraint firstItem="K0T-BC-9K2" firstAttribute="top" secondItem="5UO-f0-1OC" secondAttribute="bottom" id="l3y-BT-Icm"/>
+                                    <constraint firstItem="g04-1b-aaK" firstAttribute="leading" secondItem="FhF-y8-6gC" secondAttribute="leading" id="qT8-Fv-pYW"/>
+                                    <constraint firstItem="Wge-Ab-U79" firstAttribute="top" secondItem="yXd-Gz-KKv" secondAttribute="bottom" constant="1" id="t1K-l7-D0k"/>
+                                    <constraint firstItem="yXd-Gz-KKv" firstAttribute="leading" secondItem="FhF-y8-6gC" secondAttribute="leading" id="wC4-Ds-bbt"/>
+                                    <constraint firstAttribute="trailing" secondItem="yXd-Gz-KKv" secondAttribute="trailing" id="xrg-Wd-qZT"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wge-Ab-U79" secondAttribute="trailing" id="zjN-t1-PgU"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -148,7 +188,7 @@
             </objects>
             <point key="canvasLocation" x="1325" y="-474"/>
         </scene>
-        <!--Home-->
+        <!--Timeline-->
         <scene sceneID="waO-Pv-tl6">
             <objects>
                 <viewController storyboardIdentifier="TweetsViewController" id="7NT-e2-A4x" customClass="TweetsViewController" customModule="twitter" customModuleProvider="target" sceneMemberID="viewController">
@@ -241,21 +281,7 @@
                             <constraint firstItem="j4h-od-RTb" firstAttribute="top" secondItem="cHt-Lw-Nw2" secondAttribute="bottom" constant="-64" id="jOA-pz-2IH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="kMy-7C-8Mm">
-                        <barButtonItem key="leftBarButtonItem" style="done" id="hYK-dY-5LI">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Xce-Gp-z4h">
-                                <rect key="frame" x="39" y="99" width="56" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Log Out">
-                                    <color key="titleColor" red="0.96123494259999998" green="0.97926808099999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onLogout:" destination="7NT-e2-A4x" eventType="touchUpInside" id="Ae3-oh-UrO"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="Timeline" id="kMy-7C-8Mm">
                         <barButtonItem key="rightBarButtonItem" style="done" id="vgZ-d7-QD3">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0OZ-TY-nKV">
                                 <rect key="frame" x="264" y="50" width="45" height="30"/>
@@ -344,7 +370,7 @@
         <!--User Profile View Controller-->
         <scene sceneID="vgv-bj-H5k">
             <objects>
-                <viewController id="nkW-fM-ahf" customClass="UserProfileViewController" customModule="twitter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserProfileViewController" id="nkW-fM-ahf" customClass="UserProfileViewController" customModule="twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aKU-ud-hdX"/>
                         <viewControllerLayoutGuide type="bottom" id="i9A-vo-oTs"/>
@@ -608,7 +634,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="snC-QJ-LqL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.35677703589435961" green="0.60841285692761971" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.074509803920000006" green="0.62352941179999999" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.96123494262190812" green="0.97926808104844676" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>

@@ -12,6 +12,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var tweets: [Tweet]! = []
     var refreshControl: UIRefreshControl!
     @IBOutlet weak var tweetsTableView: UITableView!
+    var timeline: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,14 +67,20 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func loadTweets() {
-        TwitterClient.sharedInstance.homeTimeLineWithParams(nil, completion: { (tweets, error) -> () in
-            self.tweets = tweets
-            self.refreshControl.endRefreshing()
-            self.tweetsTableView.reloadData()
-        })
+        if timeline == "home" {
+            TwitterClient.sharedInstance.homeTimeLineWithParams(nil, completion: { (tweets, error) -> () in
+                self.tweets = tweets
+                self.refreshControl.endRefreshing()
+                self.tweetsTableView.reloadData()
+            })
+        } else if timeline == "mentions" {
+            TwitterClient.sharedInstance.mentionsTimeLineWithParams(nil, completion: { (tweets, error) -> () in
+                self.tweets = tweets
+                self.refreshControl.endRefreshing()
+                self.tweetsTableView.reloadData()
+            })
+        }
     }
+
     
-    @IBAction func onLogout(sender: AnyObject) {
-        User.currentUser?.logout()
-    }
 }
