@@ -2,7 +2,7 @@
 
 This is a basic twitter app to read and compose tweets using the [Twitter API](https://apps.twitter.com/).
 
-Time spent: 13.5
+Time spent: 14.25 hours
 
 ### Features
 
@@ -23,7 +23,7 @@ Time spent: 13.5
 ##### Profile page
 
 - [X] Contains the user header view
-- [ ] Contains a section with the users basic stats: # tweets, # following, # followers
+- [X] Contains a section with the users basic stats: # tweets, # following, # followers
 - [ ] Optional: Implement the paging view for the user description.
 - [ ] Optional: As the paging view moves, increase the opacity of the background screen. See the actual Twitter app for this effect
 - [ ] Optional: Pulling down the profile page should blur and resize the header image.

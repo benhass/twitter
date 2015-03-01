@@ -24,6 +24,12 @@ class User: NSObject {
     var profileBackgroundImageUrlString: String?
     var profileBackgroundImageUrl: NSURL?
     var tagline: String?
+    var tweetCount: Int?
+    var retweetCount: Int?
+    var favoritesCount: Int?
+    var followersCount: Int?
+    var followingCount: Int?
+    
     
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
@@ -36,8 +42,13 @@ class User: NSObject {
         profileImageBiggerUrl = NSURL(string: profileImageBiggerUrlString!)
         profileBackgroundImageUrlString = dictionary["profile_background_image_url"] as? String
         profileBackgroundImageUrl = NSURL(string: profileBackgroundImageUrlString!)
-
+        
         tagline = dictionary["description"] as? String
+        tweetCount = dictionary["statuses_count"] as? Int
+        retweetCount = dictionary["retweet_count"] as? Int
+        favoritesCount = dictionary["favourites_count"] as? Int
+        followersCount = dictionary["followers_count"] as? Int
+        followingCount = dictionary["friends_count"] as? Int
     }
     
     func logout() {

@@ -15,6 +15,9 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userScreenNameLabel: UILabel!
     @IBOutlet weak var profileBackgroundImageView: UIImageView!
+    @IBOutlet weak var tweetCountLabel: UILabel!
+    @IBOutlet weak var followingCountLabel: UILabel!
+    @IBOutlet weak var followersCountLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,9 @@ class UserProfileViewController: UIViewController {
         userScreenNameLabel.text = "@\(user.screenName!)"
         profileImageView.setImageWithURL(user.profileImageBiggerUrl)
         profileBackgroundImageView.setImageWithURL(user.profileBackgroundImageUrl)
+        tweetCountLabel.text = "\(user.tweetCount!)"
+        followingCountLabel.text = "\(user.followingCount!)"
+        followersCountLabel.text = "\(user.followersCount!)"
     }
 
     override func didReceiveMemoryWarning() {
