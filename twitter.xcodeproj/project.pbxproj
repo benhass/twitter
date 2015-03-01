@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C90E69571AA2EF97004C54F3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E69561AA2EF97004C54F3 /* MenuViewController.swift */; };
 		C92D8F651A993C7A00F033AB /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92D8F631A993C7A00F033AB /* TweetCell.swift */; };
 		C93676A11A996618005D1337 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93676A01A996618005D1337 /* TweetDetailViewController.swift */; };
 		C93A33031A96B55D0077094D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93A33021A96B55D0077094D /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		2744549A9BD9A21C095F4D33 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C90E69561AA2EF97004C54F3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C92D8F631A993C7A00F033AB /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetCell.swift; path = ../TweetCell.swift; sourceTree = "<group>"; };
 		C93676A01A996618005D1337 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		C93A32FD1A96B55D0077094D /* twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +168,7 @@
 				C93A332D1A9708360077094D /* TweetsViewController.swift */,
 				C93676A01A996618005D1337 /* TweetDetailViewController.swift */,
 				C9929A671A998BA40043236B /* ComposeTweetViewController.swift */,
+				C90E69561AA2EF97004C54F3 /* MenuViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				C94A1A241AA22F270081CAE6 /* UserProfileViewController.swift in Sources */,
 				C93A33291A96F8810077094D /* User.swift in Sources */,
 				C92D8F651A993C7A00F033AB /* TweetCell.swift in Sources */,
+				C90E69571AA2EF97004C54F3 /* MenuViewController.swift in Sources */,
 				C93A332B1A96F8890077094D /* Tweet.swift in Sources */,
 				C93A332E1A9708360077094D /* TweetsViewController.swift in Sources */,
 				C93A33051A96B55D0077094D /* ViewController.swift in Sources */,

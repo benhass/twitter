@@ -24,6 +24,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ROW-BW-SPf"/>
+                                    <segue destination="Fxx-Dh-ah0" kind="modal" identifier="loginSegue" id="N69-1t-QhO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -33,13 +34,119 @@
                             <constraint firstAttribute="centerY" secondItem="7vQ-Mo-gmi" secondAttribute="centerY" id="U8m-TM-Y7P"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="smQ-7j-JtA" kind="modal" identifier="loginSegue" id="gLV-FN-A2p"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="239"/>
+            <point key="canvasLocation" x="917" y="-474"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="Vjq-rc-dtg">
+            <objects>
+                <viewController id="Fxx-Dh-ah0" customClass="MenuViewController" customModule="twitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ehy-be-uJI"/>
+                        <viewControllerLayoutGuide type="bottom" id="REv-HM-PvL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0gD-lS-8qF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLR-E8-Pgi" userLabel="ContainerView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="OFi-2M-OgN" appends="YES" id="hwC-RB-pGX"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FhF-y8-6gC" userLabel="Menu">
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="569"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5UO-f0-1OC">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="65"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MST-rc-gb4">
+                                                <rect key="frame" x="16" y="41" width="45" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" red="0.96123494259999998" green="0.97926808099999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.35677703589999998" green="0.60841285690000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="MST-rc-gb4" firstAttribute="top" secondItem="5UO-f0-1OC" secondAttribute="top" constant="41" id="3Tg-fF-PWa"/>
+                                            <constraint firstAttribute="bottom" secondItem="MST-rc-gb4" secondAttribute="bottom" constant="3" id="gMR-fX-fd0"/>
+                                            <constraint firstItem="MST-rc-gb4" firstAttribute="leading" secondItem="5UO-f0-1OC" secondAttribute="leading" constant="16" id="q5i-Zy-801"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0T-BC-9K2">
+                                        <rect key="frame" x="14" y="73" width="103" height="30"/>
+                                        <state key="normal" title="Home Timeline">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTapHome:" destination="Fxx-Dh-ah0" eventType="touchUpInside" id="snf-xZ-reP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g04-1b-aaK">
+                                        <rect key="frame" x="14" y="111" width="64" height="30"/>
+                                        <state key="normal" title="Mentions">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTapMentions:" destination="Fxx-Dh-ah0" eventType="touchUpInside" id="nnh-Pr-5ea"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXd-Gz-KKv">
+                                        <rect key="frame" x="14" y="149" width="44" height="30"/>
+                                        <state key="normal" title="Profile">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTapProfile:" destination="Fxx-Dh-ah0" eventType="touchUpInside" id="8SH-xn-zJT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wge-Ab-U79">
+                                        <rect key="frame" x="14" y="187" width="60" height="30"/>
+                                        <state key="normal" title="Sign Out">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTapSignOut:" destination="Fxx-Dh-ah0" eventType="touchUpInside" id="nt2-Ge-fSF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5UO-f0-1OC" firstAttribute="leading" secondItem="FhF-y8-6gC" secondAttribute="leading" id="O4h-Y2-sWb"/>
+                                    <constraint firstAttribute="trailing" secondItem="5UO-f0-1OC" secondAttribute="trailing" id="QIU-Je-nMp"/>
+                                    <constraint firstItem="5UO-f0-1OC" firstAttribute="top" secondItem="FhF-y8-6gC" secondAttribute="top" id="Wuf-Or-Mio"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="iLR-E8-Pgi" secondAttribute="bottom" id="6aU-CD-eku"/>
+                            <constraint firstItem="FhF-y8-6gC" firstAttribute="top" secondItem="0gD-lS-8qF" secondAttribute="top" id="7aX-Cn-Qxf"/>
+                            <constraint firstItem="iLR-E8-Pgi" firstAttribute="leading" secondItem="0gD-lS-8qF" secondAttribute="leading" id="98P-57-VgD"/>
+                            <constraint firstAttribute="trailing" secondItem="iLR-E8-Pgi" secondAttribute="trailing" id="NXd-Fz-2PK"/>
+                            <constraint firstItem="iLR-E8-Pgi" firstAttribute="top" secondItem="Ehy-be-uJI" secondAttribute="bottom" constant="-20" id="XWs-DF-aTW"/>
+                            <constraint firstItem="FhF-y8-6gC" firstAttribute="leading" secondItem="0gD-lS-8qF" secondAttribute="leadingMargin" constant="-16" id="m2J-Tl-Uvj"/>
+                            <constraint firstItem="FhF-y8-6gC" firstAttribute="centerX" secondItem="0gD-lS-8qF" secondAttribute="centerX" constant="-25" id="or9-Vv-d9A"/>
+                            <constraint firstItem="FhF-y8-6gC" firstAttribute="centerY" secondItem="0gD-lS-8qF" secondAttribute="centerY" id="tL8-ew-hwQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="iLR-E8-Pgi" id="YXD-fb-WFQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F7v-et-M4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="OFi-2M-OgN">
+                    <connections>
+                        <action selector="onDragContainerView:" destination="Fxx-Dh-ah0" id="rXo-67-aNS"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1325" y="-474"/>
         </scene>
         <!--Home-->
         <scene sceneID="waO-Pv-tl6">
@@ -128,10 +235,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="j4h-od-RTb" firstAttribute="leading" secondItem="t59-yf-UIM" secondAttribute="leading" id="7H6-Uq-4xb"/>
-                            <constraint firstAttribute="trailing" secondItem="j4h-od-RTb" secondAttribute="trailing" id="GZZ-iR-K3E"/>
-                            <constraint firstItem="j4h-od-RTb" firstAttribute="top" secondItem="t59-yf-UIM" secondAttribute="top" id="WTc-hL-gFr"/>
-                            <constraint firstItem="UFp-dd-FkQ" firstAttribute="top" secondItem="j4h-od-RTb" secondAttribute="bottom" id="nBc-WC-xFT"/>
+                            <constraint firstItem="j4h-od-RTb" firstAttribute="leading" secondItem="t59-yf-UIM" secondAttribute="leading" id="0q7-Hu-FIS"/>
+                            <constraint firstItem="UFp-dd-FkQ" firstAttribute="top" secondItem="j4h-od-RTb" secondAttribute="bottom" id="1EG-uB-sLd"/>
+                            <constraint firstAttribute="trailing" secondItem="j4h-od-RTb" secondAttribute="trailing" id="L3j-2E-Rdg"/>
+                            <constraint firstItem="j4h-od-RTb" firstAttribute="top" secondItem="cHt-Lw-Nw2" secondAttribute="bottom" constant="-64" id="jOA-pz-2IH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="kMy-7C-8Mm">
@@ -522,7 +629,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ye2-21-Iq5"/>
-        <segue reference="P3C-Gw-5vR"/>
+        <segue reference="hi4-Wg-47w"/>
+        <segue reference="hWB-tV-av2"/>
     </inferredMetricsTieBreakers>
 </document>
