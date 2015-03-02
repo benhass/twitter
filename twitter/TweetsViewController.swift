@@ -22,7 +22,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tweetsTableView.delegate = self
         tweetsTableView.dataSource = self
         tweetsTableView.rowHeight = UITableViewAutomaticDimension
-        tweetsTableView.estimatedRowHeight = 250
+        tweetsTableView.estimatedRowHeight = 100
 
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "loadTweets", forControlEvents: UIControlEvents.ValueChanged)
